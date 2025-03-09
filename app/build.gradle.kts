@@ -1,3 +1,5 @@
+
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -41,6 +43,7 @@ android {
         implementation(libs.core.ktx)
         testImplementation(libs.junit)
         androidTestImplementation(libs.ext.junit)
+        implementation("com.basgeekball:awesome-validation:4.3")
         androidTestImplementation(libs.espresso.core)
     }
 }
