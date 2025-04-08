@@ -1,8 +1,13 @@
 package com.example.lab;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +18,18 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class AppointmentActivity extends AppCompatActivity {
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_appointment);
+
+        ImageButton youtubeButton = findViewById(R.id.youtubeButton);
+        youtubeButton.setOnClickListener(v -> {
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/watch?v=libk2qqcEA8"));
+            startActivity(intent);
+        });
+
 
         CardView exit = findViewById(R.id.cardBack);
         exit.setOnClickListener(new View.OnClickListener() {
@@ -25,6 +38,11 @@ public class AppointmentActivity extends AppCompatActivity {
                 startActivity(new Intent(AppointmentActivity.this, HomeActivity.class));
             }
         });
+
+
+
+
+
 
         CardView ThyrocareTechnologies = findViewById(R.id.cardThyrocareTechnologies);
         ThyrocareTechnologies.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +54,9 @@ public class AppointmentActivity extends AppCompatActivity {
 
             }
         });
+
+
+
 
         CardView ApolloDiagnostics = findViewById(R.id.cardApolloDiagnostics);
         ApolloDiagnostics.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +97,10 @@ public class AppointmentActivity extends AppCompatActivity {
                 startActivity(it);
 
             }
+
         });
+
+
     }
 
 }

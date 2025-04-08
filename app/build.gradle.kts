@@ -1,5 +1,3 @@
-
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -17,6 +15,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
     }
 
     buildTypes {
@@ -28,24 +27,31 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
-
-    dependencies {
-
-        implementation(libs.appcompat)
-        implementation(libs.material)
-        implementation(libs.activity)
-        implementation(libs.constraintlayout)
-        implementation(libs.core.ktx)
-        testImplementation(libs.junit)
-        androidTestImplementation(libs.ext.junit)
-        implementation("com.basgeekball:awesome-validation:4.3")
-        androidTestImplementation(libs.espresso.core)
-    }
 }
 
+dependencies {
+    implementation(libs.appcompat)
+    implementation(libs.material)
+    implementation(libs.activity)
+    implementation(libs.constraintlayout)
+    implementation(libs.core.ktx)
+    implementation("com.itextpdf:itextg:5.5.10")
+    implementation("com.github.barteksc:android-pdf-viewer:3.2.0-beta.1")
+    implementation("com.basgeekball:awesome-validation:4.3")
+
+
+
+
+
+
+
+
+
+// PDF and validation libraries
+}
 
